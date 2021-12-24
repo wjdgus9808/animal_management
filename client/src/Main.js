@@ -35,7 +35,8 @@ function Main(props){
           console.log(res);
           const _inputData = await res.data.data.map((rowData) => ({
                   id:rowData.id,
-                  date:rowData.date
+                  date:rowData.date,
+                  img:rowData.img
                 })
           )
           setInputData(inputData.concat(_inputData))
@@ -55,6 +56,7 @@ function Main(props){
             </div>
             <div>
                 {inputData.map(data=>{
+                    var imgUrl="/images/"+"img"+data.id+".jpg"
                     return(data.id!==''&&<div className='boardList' key = {data.id}>
                         <ul className="list">
                             
@@ -66,6 +68,8 @@ function Main(props){
                                     <dl>
                                         <dt>날짜</dt>
                                         <dd>{data.date}</dd>
+                                        <dt>이미지</dt>
+                                        <img src ={imgUrl} />
                                     </dl>
                                 </div>
                           

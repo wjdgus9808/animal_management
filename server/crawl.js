@@ -5,10 +5,10 @@ var fs = require('fs');
 const db=require('./config/db');
 var request = require('request')
 
-
+//public/images폴더에 크롤링이미지 저장
 var download = function(uri, filename, callback){
     request.head(uri, function(err, res, body){
-      request(uri).pipe(fs.createWriteStream("./images/"+filename)).on('close', callback);
+      request(uri).pipe(fs.createWriteStream("../client/public/images/"+filename)).on('close', callback);
     });
   };
 const getHTML = async()=>{

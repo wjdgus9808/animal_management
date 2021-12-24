@@ -13,7 +13,7 @@ app.use('/api/user_inform',user_inform);
 app.use('/api/upload',upload);
 
 app.get('/api/crawl',(req,res)=>{
-    db.query("SELECT id,date FROM crawldata",(err,data)=>{
+    db.query("SELECT id,date,img FROM crawldata",(err,data)=>{
         if(!err) res.send({data});
         else res.send(err);
         
