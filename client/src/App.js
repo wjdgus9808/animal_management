@@ -1,9 +1,8 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import "./App.css";
-import Users from './test2.js'
-import Login from './Login'
-import Main from './Main'
+import Login from './pages/Login'
+import Main from './pages/Main'
 function App(){
   const [isLogin,setIsLogin]= useState(false)
   useEffect(()=> {

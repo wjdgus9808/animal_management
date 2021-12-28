@@ -17,6 +17,7 @@ router.post("/", (req, res) => {
     if (err) {
       res.status(500).send({ message: "File upload failed", code: 200 });
     }
+    console.log("uploaded");
     res.status(200).send({ message: "File Uploaded", code: 200 });
   });
 });

@@ -23,7 +23,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.small{
+  width: 100px;
+  height: 100px;
+}
 .App-link {
   color: #61dafb;
 }
