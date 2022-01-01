@@ -2,6 +2,7 @@ import React, { useEffect,  useState } from 'react';
 import Navbar from './Navbar'
 import ShowCrawl from '../components/ShowCrawl';
 import Upload from './Upload'
+import Search from './Search'
 import{
   BrowserRouter as Router,
   Switch,
@@ -32,10 +33,15 @@ function Main(props){
               <Route path="/" exact>
                 <h1>홈</h1>
                 <ShowCrawl />
+                <div>
+                  <button type='button' onClick={onLogout}>Logout</button>
+                </div>
               </Route>
-              <div>
-                <button type='button' onClick={onLogout}>Logout</button>
-              </div>
+              <Route path="/search_result">
+                <h1>결과</h1>
+                <Search/>
+              </Route>
+              
             </Switch>  
           </div>
         </Router>

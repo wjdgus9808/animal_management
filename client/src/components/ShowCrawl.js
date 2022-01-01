@@ -1,6 +1,6 @@
 import React, { useEffect,  useState } from 'react';
 import axios from 'axios';
-
+import '../App.css'
 const ShowCrawl = () =>{
     const [inputData,setInputData]=useState([{
         id:'',
@@ -28,31 +28,29 @@ const ShowCrawl = () =>{
           }
         },[])
     return(
-        <>
+        <div className="container">
             {inputData.map(data=>{
-                    var imgUrl="/images/"+"img"+data.id+".jpg"
-                    return(data.id!==''&&<div className='boardList' key = {data.id}>
-                        <ul className="list">
+                var imgUrl="/images/"+"img"+data.id+".jpg"
+                return(data.id!==''&&
+                    <div className="item" key = {data.id}>                            
+                        <div>
+                            <img className="small" src ={imgUrl} />                                   
                             
-                                <div className ="txt">
-                                    <dl>
-                                        <dt>아이디</dt>
-                                        <dd>{data.id} </dd>
-                                    </dl>
-                                    <dl>
-                                        <dt>날짜</dt>
-                                        <dd>{data.date}</dd>
-                                        <dt>이미지</dt>
-                                        <img className="small" src ={imgUrl} />
-                                    </dl>
-                                </div>
-                          
-                           
-                        </ul>
-                           
-                    </div>)
+                            </div>
+                            <ul>
+                                <dt>날짜</dt>
+                                <span>{data.date}</span>
+                                아이디
+                                <br></br>
+                                {data.id}                                    
+                           </ul>
+                        </div>
+   
+                    )
                 })}
-        </>
+               
+        </div>
     )
+    
 }
 export default ShowCrawl;

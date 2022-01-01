@@ -5,7 +5,7 @@ from urllib.request import urlopen
 from urllib.parse import quote_plus
 conn = MySQLdb.connect(
     user="root",
-    passwd="root",
+    passwd="9972486",
     host="localhost",
     db="test",
     charset="utf8",
@@ -21,7 +21,7 @@ url = "https://www.animal.go.kr/front/awtis/protection/protectionList.do?totalCo
 #     conn.commit()
 def updateImgToDB(min, max):
     for i in range(min, max):
-        sql = "UPDATE CrawlData_test SET img=%s WHERE id=%s"
+        sql = "UPDATE CrawlData SET img=%s WHERE id=%s"
         val = ("img"+str(i)+".jpg", i)
         cursor.execute(sql, val)
         conn.commit()
@@ -55,12 +55,11 @@ def crawl(startPage, endPage):
             for d in data1:
                 crawlList.append(d.string)
             print(crawlList[1], crawlList[2], crawlList[3], crawlList[4])
-            sql = "INSERT INTO CrawlData_test VALUES(NULL, %s, NULL, %s, %s, %s, NULL, NULL)"
+            sql = "INSERT INTO CrawlData VALUES(NULL, %s, NULL, %s, %s, %s, NULL, NULL)"
             val = (crawlList[1], crawlList[2], crawlList[3], crawlList[4])
             cursor.execute(sql, val)
             conn.commit()
-    conn.close()
-
+    #conn.close()
 
 #crawl(1,2);
-updateImgToDB(1,11);
+updateImgToDB(1,101);

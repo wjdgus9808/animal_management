@@ -53,7 +53,7 @@ function Login() {
 
  
     return(
-        <div>
+        <div className="text-center">
             <h2>Login</h2>
             <div>
                 <label htmlFor='input_id'>ID : </label>
@@ -64,7 +64,7 @@ function Login() {
                 <input type='password' placeholder='비밀번호' name='input_pw' value={inputPw} onChange={handleInputPw} />
             </div>
             <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
+                <button type='button'  className="btn btn-primary btn-sm" onClick={onClickLogin}>Login</button>
             </div>
         </div>
     )

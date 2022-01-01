@@ -1,5 +1,6 @@
 import React, { useEffect,  useState } from 'react';
 import axios from 'axios';
+import Search from './Search';
 
 
 function Upload(){
@@ -20,6 +21,7 @@ function Upload(){
             formData
           );
           console.log(res);
+          document.location.href='/search_result'
         } catch (ex) {
           console.log(ex);
         }
@@ -28,8 +30,11 @@ function Upload(){
         <>
             <div className="App">
                 <input type="file" onChange={saveFile} />
-                 <button onClick={uploadFile}>Upload</button>
+                <button onClick={uploadFile}>Upload</button>
+                
             </div>
+            
+            
         </>
     )
 }
