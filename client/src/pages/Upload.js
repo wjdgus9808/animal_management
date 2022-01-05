@@ -29,6 +29,8 @@ function Upload(){
     const [fileName, setFileName] = useState("");
     const [place, setPlace]=useState("");
     const [place2,setPlace2]= useState();
+    const [imageSrc, setImageSrc] = useState('');
+
     const handleChange = (e) => {
       setPlace(e.value);
       if(e.value==='서울') options_selected=options_seoul
@@ -42,6 +44,11 @@ function Upload(){
     const saveFile = (e) => {
         setFile(e.target.files[0]);
         setFileName(e.target.files[0].name);
+        const reader = new FileReader(); 
+        reader.readAsDataURL(e.target.files[0]); 
+        return new Promise((resolve) => { reader.onload = () => { setImageSrc(reader.result); resolve(); }; });
+
+
       };
       
       const uploadFile = async (e) => {
@@ -63,12 +70,15 @@ function Upload(){
       };    
     return(
         <>
-            <div className="App">
+            <div>
+                <div className="preview"> {imageSrc && <img className="small" src={imageSrc} alt="favicon.ico" />} </div>
                 <input type="file" onChange={saveFile} />
                 <button onClick={uploadFile}>Upload</button>  
                 <br></br>
-                <Select  options={options} onChange={handleChange} />
-                <Select  options={options_selected} onChange={handleChange2} />
+                <div className="container">
+                  <Select  options={options} onChange={handleChange} />
+                  <Select  options={options_selected} onChange={handleChange2} />
+                </div>
             </div>
             
             
