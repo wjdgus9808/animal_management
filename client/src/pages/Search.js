@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import '../App.css'
 import axios from 'axios';
 
-
+//결과창
 function Search(props){
     const [inputData,setInputData]=useState([{
         rank:'',
@@ -28,7 +28,7 @@ function Search(props){
                 )
                 setInputData(inputData.concat(_inputData))
                 console.log(inputData)
-                setIsLoading(false);
+                if(inputData)setIsLoading(false);
               } catch(e){
                 console.error(e.message)
               }

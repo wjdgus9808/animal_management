@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
   const file = req.files.file;
   const filename = "capture_img.jpg";
   sql1="INSERT INTO captureimage (name,place,place2,kind) VALUES(?,?,?,?)";
-  val1=[filename,"none","none","none"]
+  val1=[filename,req.body.place,req.body.place2,"none"]
   db.query(sql1,val1,(err,data)=>{
     
   })
