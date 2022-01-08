@@ -13,7 +13,7 @@ function App(){
       console.log('isLogin ?? ::', isLogin)
     }
   })
-  return <div className="App">
+  return <div>
             {isLogin ?
               <Main isLogin={isLogin} />:
               <Login />  

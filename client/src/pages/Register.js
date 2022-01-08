@@ -72,7 +72,7 @@ function Upload(){
     return(
         <>
             <div className='searchForm'>
-                <h2>찾고자 하는 동물정보를 입력해주세요!</h2>
+                <h2>동물을 등록해요!</h2>
                 <div> {imageSrc && <img src={imageSrc} alt="favicon.ico" />} </div>
                 <input type="file" onChange={saveFile} />  
                 <br></br>

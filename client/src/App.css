@@ -3,6 +3,7 @@
   
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,19 +28,108 @@
 .small{
   width: 100px;
   height: 100px;
-  margin:60px;
+}
+
+.loginForm{
+  position: absolute;
+  width:300px;
+  height:400px;
+  padding: 30px,20px;
+  background-color: #FFFFFF;
+  text-align: center;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+.loginForm h2{
+
+  margin: 30px;
+}
+.id {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+.pw {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.idForm{
+  border-bottom: 2px solid rgba(128, 128, 128, 0.705);
+  margin: 30px;
+  padding: 10px 10px;
 }
 .container{
   display: flex;
   justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
 }
+.container h3{
+  text-align: center;
+  padding:10px 10px;
+  font-weight: bold;
+  font-size:16px;
+  color:gray
+}
+.searchForm div img{
+  padding:10px 10px;
+  margin:30px;
+}
 .item{
-  width:100px;
-  height:100px;
-  background:white;
-  border:1px solid #000;
-  margin:60px
+  width:400px;
+  height:176px;
+  margin:60px;
+  border: 10px solid red; 
+}
+.item img{
+  width: 30%;
+  height: 100%;
+  float:left;
+}
+.btn{
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+  
+}
+.btn:hover {
+  background-position: right;
+}
+.searchForm{
+  position: absolute;
+  width:400px;
+  height:400px;
+  padding: 30px,20px;
+  background-color: #FFFFFF;
+  text-align: center;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
 }
 .App-link {
   color: #61dafb;

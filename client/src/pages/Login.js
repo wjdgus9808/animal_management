@@ -53,20 +53,20 @@ function Login() {
 
  
     return(
-        <div className="text-center">
-            <h2>Login</h2>
-            <div>
-                <label htmlFor='input_id'>ID : </label>
-                <input type='text' placeholder='아이디' name='input_id' value={inputId} onChange={handleInputId} />
+        <body width="100%" height="100%">
+            <div className='loginForm'>
+                <h2>Login</h2>
+                <div className='idForm'>
+                    <input className='id' type='text' placeholder='아이디' name='input_id' value={inputId} onChange={handleInputId} />
+                </div>
+                <div className='idForm'>
+                    <input className='pw' type='password' placeholder='비밀번호' name='input_pw' value={inputPw} onChange={handleInputPw} />
+                </div>
+                <div>
+                    <button type='button'  className="btn" onClick={onClickLogin}>Login</button>
+                </div>
             </div>
-            <div>
-                <label htmlFor='input_pw'>PW : </label>
-                <input type='password' placeholder='비밀번호' name='input_pw' value={inputPw} onChange={handleInputPw} />
-            </div>
-            <div>
-                <button type='button'  className="btn btn-primary btn-sm" onClick={onClickLogin}>Login</button>
-            </div>
-        </div>
+        </body>
     )
 }
  

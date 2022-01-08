@@ -3,6 +3,8 @@ import Navbar from './Navbar'
 import ShowCrawl from '../components/ShowCrawl';
 import Upload from './Upload'
 import Search from './Search'
+import Register from './Register'
+import Detail from './Detail';
 import{
   BrowserRouter as Router,
   Switch,
@@ -28,7 +30,7 @@ function Main(props){
               </Route>
               <Route path="/registers">
                 <h1>등록하기</h1>
-                <Upload />
+                <Register />
               </Route>
               <Route path="/" exact>
                 <h1>홈</h1>
@@ -37,6 +39,7 @@ function Main(props){
                   <button type='button' onClick={onLogout}>Logout</button>
                 </div>
               </Route>
+              <Route exact path="/detail/:id" component={Detail}/>
               <Route path="/search_result">
                 <h1>결과</h1>
                 <Search/>

@@ -1,6 +1,7 @@
 import React, { useEffect,  useState } from 'react';
 import axios from 'axios';
 import '../App.css'
+import {Link} from "react-router-dom";
 const ShowCrawl = () =>{
     const [inputData,setInputData]=useState([{
         id:'',
@@ -30,21 +31,15 @@ const ShowCrawl = () =>{
     return(
         <div className="container">
             {inputData.map(data=>{
-                var imgUrl="/images/"+"img"+data.id+".jpg"
+                var imgUrl="/images/"+data.img
                 return(data.id!==''&&
-                    <div className="item" key = {data.id}>                            
-                        <div>
-                            <img className="small" src ={imgUrl} />                                   
-                            
-                            </div>
-                            <ul>
-                                <dt>날짜</dt>
-                                <span>{data.date}</span>
-                                아이디
-                                <br></br>
-                                {data.id}                                    
-                           </ul>
-                        </div>
+                    <div className='item' key = {data.id}>                                                             
+                        <img src ={imgUrl} /> 
+                        <dt>발견날짜</dt>
+                        <span>{data.date}</span>
+                        <br></br>
+                        <Link to = {`/detail/${data.id}`}>상세정보</Link>                                   
+                    </div>
    
                     )
                 })}

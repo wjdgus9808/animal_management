@@ -11,7 +11,7 @@ const user_inform = require('./router/user_inform');
 const upload = require('./router/upload');
 const crawl = require('./router/crawl');
 const search_inform = require('./router/search_inform');
-
+const detail = require('./router/detail')
 
  const spawn = require('child_process').spawn;
  const result = spawn('python', ['main.py']);
@@ -23,7 +23,7 @@ app.use('/api/user_inform',user_inform);
 app.use('/api/upload',upload);
 app.use('/api/crawl', crawl);
 app.use('/api/search',search_inform);
-
+app.use('/api/detail',detail);
 app.listen(port,()=>console.log(`listening on ${port}`));
 
 
